@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= locals.title %></title>
+    <title>New Message</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
@@ -11,14 +11,11 @@
         <a href="/new">New Message</a>
       </nav>
 
-      <div class="messages">
-        <% for (let i = 0; i < locals.messages.length; i++) { %>
-          <div class="message">
-            <p id="message-text"><%= locals.messages[i].message %></p>
-            <p id="message-data"><%= locals.messages[i].data %></p>
-          </div>
-        <% } %>
-      </div>
+      <form method="POST" action="/new">
+        <input type="text" name="username" placeholder="Your username">
+        <textarea name="message" cols="30" rows="10" placeholder="Your message"></textarea>
+        <button type="submit">Submit!</button>
+      </form>
 
       <footer>
         <p>Made by Chernysh Artem</p>
